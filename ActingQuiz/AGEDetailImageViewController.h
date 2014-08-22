@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
+#import "AGESettings.h"
 
 @interface AGEDetailImageViewController : UIViewController
 
@@ -16,5 +18,6 @@
 @property (weak, nonatomic) UIImage *Aged;
 @property (weak, nonatomic) IBOutlet UITextView *AgeView;
 @property (weak, nonatomic) NSString *Age;
+@property (weak, nonatomic) NSString *imageId;
 
 @end

@@ -109,6 +109,10 @@
         [self setImage: img];
         [self setAge: [self clustertoage:[record.cluster intValue]]];
         [self performSegueWithIdentifier:@"show_detail" sender:self];
+        
+        if ([@"15" isEqualToString:[NSString stringWithFormat: @"%@", record.cluster]]) {
+            [self setImageId: [NSString stringWithFormat: @"%@", record.imageid]];
+        }
     }
 }
 
@@ -179,6 +183,10 @@
         [vc setAged: self.Aged];
         [vc setImage: self.Image];
         [vc setAge: self.Age];
+        if (self.imageId) {
+            //self.imageId = @"22965";
+            [vc setImageId: self.imageId];
+        }
     }
 }
 
@@ -197,7 +205,11 @@
             dispatch_async(sessionQueue, ^{
                 //download
                 //get image face_id - cluster_id from server
-                NSString *requestURL = [NSString stringWithFormat:@"%@getFace?face_id=%d&cluster_id=%d", serverUrl, [record.imageid intValue], [record.cluster intValue]];
+                int cl = [record.cluster intValue];
+                if (cl==15) {
+                    cl = 14;
+                }
+                NSString *requestURL = [NSString stringWithFormat:@"%@getFace?face_id=%d&cluster_id=%d", serverUrl, [record.imageid intValue], cl];
                 NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestURL]];
                 AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
                 requestOperation.responseSerializer = [AFImageResponseSerializer serializer];
@@ -276,6 +288,9 @@
             break;
         case 14:
             str = @"between 79 and 101";
+            break;
+        case 15:
+            str = @"all ages";
             break;
         default:
             str = @"no valid age";

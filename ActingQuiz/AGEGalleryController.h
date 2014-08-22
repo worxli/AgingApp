@@ -20,6 +20,7 @@
 @property (nonatomic,strong) NSArray* fetchedPictureSetArray;
 
 @property (strong, nonatomic) NSString *Age;
+@property (strong, nonatomic) NSString *imageId;
 @property (strong, nonatomic) UIImage *Aged;
 @property (strong, nonatomic) UIImage *Image;
 @property (nonatomic) dispatch_queue_t sessionQueue;
