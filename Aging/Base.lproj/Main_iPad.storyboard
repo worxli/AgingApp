@@ -404,7 +404,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6f-RV-iug">
-                                            <rect key="frame" x="7" y="197" width="347" height="29"/>
+                                            <rect key="frame" x="10" y="197" width="347" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="highlightedColor"/>
@@ -1109,7 +1109,7 @@ Cg
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="AG7-fu-6wG"/>
-        <segue reference="qUU-xd-uKq"/>
+        <segue reference="84s-Nc-cHU"/>
+        <segue reference="Iof-va-ANx"/>
     </inferredMetricsTieBreakers>
 </document>

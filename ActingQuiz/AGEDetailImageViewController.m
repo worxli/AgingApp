@@ -28,52 +28,22 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _ImageView.contentMode = UIViewContentModeScaleAspectFit;
-    _ImageView.clipsToBounds = YES;
-    [_ImageView setImage: self.detailImage];
+    self.ImageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.ImageView.clipsToBounds = YES;
+    [self.ImageView setImage: self.Image];
 
+    self.AgedView.contentMode = UIViewContentModeScaleAspectFit;
+    self.AgedView.clipsToBounds = YES;
+    [self.AgedView setImage: self.Aged];
     
+    self.AgeView.text = self.Age;
+
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (UIView *) viewForZoomingInScrollView:(UIScrollView *) scrollView
-{
-    return self.ImageView;
-}
-
-
-
--(void)scrollViewDidEndZooming:(UIScrollView *)scrollView
-{
-    CGSize imgViewSize = self.ImageView.frame.size;
-    CGSize imageSize = self.ImageView.image.size;
-    
-    CGSize realImgSize;
-    if(imageSize.width / imageSize.height > imgViewSize.width / imgViewSize.height) {
-        realImgSize = CGSizeMake(imgViewSize.width, imgViewSize.width / imageSize.width * imageSize.height);
-    }
-    else {
-        realImgSize = CGSizeMake(imgViewSize.height / imageSize.height * imageSize.width, imgViewSize.height);
-    }
-    
-    //CGRect fr = CGRectMake(0, 0, 0, 0);
-    //fr.size = realImgSize;
-    //self.ImageView.frame = fr;
-    
-    CGSize scrSize = scrollView.frame.size;
-    //float offx = (scrSize.width > realImgSize.width ? (scrSize.width - realImgSize.width) / 2 : 0);
-    //float offy = (scrSize.height > realImgSize.height ? (scrSize.height - realImgSize.height) / 2 : 0);
-    float offx = 0;
-    float offy = 0;
-    
-    // don't animate the change.
-    self.scrollView.contentInset = UIEdgeInsetsMake(offy, offx, offy, offx);
-    //NSLog(@"centered");
 }
 
 @end

@@ -33,6 +33,9 @@
     self.userId = (int)[defaults integerForKey:@"user_id"];
     
     [self setupDropdownPickers];
+    
+    FFActQuizAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+    self.managedObjectContext = appDelegate.managedObjectContext;
 
 }
 
@@ -305,7 +308,9 @@
         [array addObject: [NSString stringWithFormat:@"%ld",(long)i]];
     }
     
-    self.ageArray = [[NSArray alloc] initWithArray:array];
+    self.ageArray  = [[NSArray alloc] initWithObjects: @"1", @"2-3", @"4-5", @"6-8", @"9-11", @"12-14", @"15-23", @"24-33", @"34-43", @"44-55", @"56-66", @"67-78", @"79-101", nil];
+    
+    //self.ageArray = [[NSArray alloc] initWithArray:array];
     
     self.expressionArray = [[NSArray alloc] initWithObjects:
                        @"neutral",
@@ -454,7 +459,7 @@
         self.gender = @"f";
         self.ethnicity = @"white";
         self.expression = @"neutral";
-        self.targetAge = @"99";
+        self.targetAge = @"79-101";
     }];
     
     
@@ -469,7 +474,8 @@
         [array addObject: [NSString stringWithFormat:@"%ld",(long)i]];
     }
     
-    self.targetAgeArray = [[NSArray alloc] initWithArray:array];
+    //self.targetAgeArray = [[NSArray alloc] initWithArray:array];
+    self.targetAgeArray = self.ageArray;
     [self.targetAgePicker reloadAllComponents];
 
     
@@ -563,6 +569,7 @@
             int cluster = [responseObject[@"cluster"] intValue];
             int face_id = [responseObject[@"face_id"] intValue];
             int target = [responseObject[@"target"] intValue];
+            NSString * job = responseObject[@"job"];
             
             if (cluster == 0){
                 [self alertStatus:@"The face detector has trouble with faces that are titled, poorly lit, or take up too much of the screen." :@"Face Not Detected" :0];
@@ -572,18 +579,34 @@
                 self.darkOver.hidden = YES;
             }
             else {
-                //[self alertStatus:@"The face detector has detected your face and may now alter it." :@"Face Detected" :0];
+                [self alertStatus:@"Your picture has been successfully uploaded. Please check your gallery for results!" :@"Face Detected" :0];
                 self.progressBar.hidden = YES;
+                [self.spinner stopAnimating];
+                self.darkOver.hidden = YES;
                 
-                self.faceId = face_id;
-                self.cluster = cluster;
-                self.targetCluster = target;
+
                 
-                [self ageFace];
+                // Add Entry to Database
                 
+                //  1
+                PictureSet * newSet = [NSEntityDescription insertNewObjectForEntityForName:@"PictureSet"
+                                                                    inManagedObjectContext:self.managedObjectContext];
+                //  2
+                NSData *imgData = [NSData dataWithData:UIImagePNGRepresentation(self.uploadImage)];
+                newSet.image = imgData;
+                newSet.cluster = [NSNumber numberWithInt: target]; //[NSNumber numberWithInt: 8]; // get from response object!!
+                newSet.set = NO;
+                newSet.imageid = [NSNumber numberWithInt: face_id]; // get from response object!!
+                newSet.userid = [NSNumber numberWithInt:self.userId];
+                newSet.job = job;
+                
+                //  3
+                NSError *error;
+                if (![self.managedObjectContext save:&error]) {
+                    NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+                }
             }
         }
-        
     }];
     
     [uploadTask resume];

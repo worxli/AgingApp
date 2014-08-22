@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface AGEDetailImageViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UIImageView *ImageView;
-@property (weak, nonatomic) UIImage *detailImage;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *AgedView;
+@property (weak, nonatomic) UIImage *Image;
+@property (weak, nonatomic) UIImage *Aged;
+@property (weak, nonatomic) IBOutlet UITextView *AgeView;
+@property (weak, nonatomic) NSString *Age;
 
 @end

@@ -11,6 +11,8 @@
 #import "AFNetworking/AFNetworking.h"
 #import "AGESettings.h"
 #import "AGEAgedViewController.h"
+#import "PictureSet.h"
+#import "FFActQuizAppDelegate.h"
 
 @interface AGECameraController : UIViewController <UIImagePickerControllerDelegate,
 UINavigationControllerDelegate>
@@ -66,5 +68,8 @@ UINavigationControllerDelegate>
 - (IBAction)ethnicityNext:(id)sender;
 - (IBAction)expressionNext:(id)sender;
 - (IBAction)targetAgeNext:(id)sender;
+
+// saving data
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 @end

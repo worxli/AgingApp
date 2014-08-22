@@ -166,9 +166,9 @@
     if ([[segue identifier] isEqualToString:@"fullImageAction"])
     {
         // Get reference to the destination view controller
-        AGEDetailImageViewController *vc = [segue destinationViewController];
+        //AGEDetailImageViewController *vc = [segue destinationViewController];
         
-       [vc setDetailImage: self.detailImage];
+       //[vc setDetailImage: self.detailImage];
     }
 }
 

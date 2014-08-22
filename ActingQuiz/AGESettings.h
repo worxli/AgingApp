@@ -9,9 +9,11 @@
 #ifndef AGESettings_h
 #define AGESettings_h
 
+#import "NSMutableArray+Queue.h"
+
 
 static NSString *loginUrl = @"http://www.facefrontier.com";
 static NSString *serverUrl = @"http://robson.cs.washington.edu:8090/aging/";
-static NSString *userUrl = @"http://robson.cs.washington.edu:8090/";
+static NSString *userUrl = @"http://robson.cs.washington.edu:8090/"; 
 
 #endif

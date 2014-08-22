@@ -5,15 +5,11 @@
         <attribute name="cluster" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="imageid" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="job" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="set" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <relationship name="belongsto" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="has" inverseEntity="User" syncable="YES"/>
-    </entity>
-    <entity name="User" representedClassName="User" syncable="YES">
-        <attribute name="user" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="has" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PictureSet" inverseName="belongsto" inverseEntity="PictureSet" syncable="YES"/>
+        <attribute name="userid" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="73"/>
-        <element name="PictureSet" positionX="250" positionY="8" width="128" height="133"/>
+        <element name="PictureSet" positionX="250" positionY="8" width="128" height="150"/>
     </elements>
 </model>

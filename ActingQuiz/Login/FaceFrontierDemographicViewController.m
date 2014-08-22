@@ -43,9 +43,9 @@
     
     self.ageArray = [[NSArray alloc] initWithArray:array];
     
-    self.genderArray  = [[NSArray alloc] initWithObjects:@"female", @"male", nil];
+    self.genderArray  = [[NSArray alloc] initWithObjects: @"female", @"male", nil];
     
-    self.countryArray = [[NSArray alloc] initWithObjects:@"Country?",
+    self.countryArray = [[NSArray alloc] initWithObjects:
                            @"United States of America",
                            @"Afghanistan",
                            @"Albania",

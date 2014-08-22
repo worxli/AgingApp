@@ -111,6 +111,18 @@
                                     <segue destination="v94-XY-kjL" kind="push" identifier="make_faces" id="zDi-7J-Yte"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tyi-DH-pkO">
+                                <rect key="frame" x="20" y="309" width="280" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <state key="normal" title="Gallery">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="He2-QR-ang" kind="push" id="i4E-FB-cMX"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="41d-TP-e7k">
                                 <rect key="frame" x="130" y="518" width="60" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -122,11 +134,11 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uwcselogo.jpg" id="zJm-eZ-f4L">
-                                <rect key="frame" x="44" y="358" width="90" height="94"/>
+                                <rect key="frame" x="45" y="386" width="90" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UW Seal.GIF" id="jAY-ej-2Fc">
-                                <rect key="frame" x="170" y="352" width="104" height="105"/>
+                                <rect key="frame" x="171" y="380" width="104" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -939,6 +951,103 @@ Cg
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w0o-qj-esO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2108" y="806"/>
+        </scene>
+        <!--Gallery Controller - Pull down to refresh-->
+        <scene sceneID="liL-nM-Rpl">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="He2-QR-ang" customClass="AGEGalleryController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="BXK-8s-jJU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.97647058819999999" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6c6-4U-sVa">
+                            <size key="itemSize" width="320" height="127"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="dSf-iH-xJw" customClass="AGECellView">
+                                <rect key="frame" x="0.0" y="64" width="320" height="127"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="127"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="clY-cf-2rI">
+                                            <rect key="frame" x="20" y="28" width="75" height="71"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar.jpg" id="hQG-fg-lAc">
+                                            <rect key="frame" x="123" y="28" width="75" height="71"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                        <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="center" selectable="NO" id="83M-x1-gB1">
+                                            <rect key="frame" x="211" y="42" width="89" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <outlet property="age" destination="83M-x1-gB1" id="4hR-3d-YpR"/>
+                                    <outlet property="aged" destination="hQG-fg-lAc" id="SHC-LW-Pac"/>
+                                    <outlet property="image" destination="clY-cf-2rI" id="Lpo-p1-unJ"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="He2-QR-ang" id="q6A-bS-B8X"/>
+                            <outlet property="delegate" destination="He2-QR-ang" id="IaJ-zZ-e8U"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Pull down to refresh" id="8fr-xw-EpE"/>
+                    <connections>
+                        <segue destination="VHa-FL-lpm" kind="push" identifier="show_detail" id="12y-3P-GpI"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yJf-On-e4I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1208" y="1577"/>
+        </scene>
+        <!--Detail Image View Controller-->
+        <scene sceneID="xZK-I6-9RO">
+            <objects>
+                <viewController id="VHa-FL-lpm" customClass="AGEDetailImageViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mfz-rI-GQM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar.jpg" id="9hY-fZ-KFn">
+                                <rect key="frame" x="107" y="56" width="106" height="103"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar.jpg" id="NuJ-3s-OYg">
+                                <rect key="frame" x="25" y="288" width="271" height="260"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" textAlignment="center" id="pOD-eC-zWR">
+                                <rect key="frame" x="29" y="216" width="262" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UY3-fV-cEs"/>
+                    <connections>
+                        <outlet property="AgeView" destination="pOD-eC-zWR" id="aIl-RH-aUG"/>
+                        <outlet property="AgedView" destination="NuJ-3s-OYg" id="0ZX-qU-PRj"/>
+                        <outlet property="ImageView" destination="9hY-fZ-KFn" id="a3u-lE-ICA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Epu-4W-Bht" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1645" y="1577"/>
         </scene>
     </scenes>
     <resources>

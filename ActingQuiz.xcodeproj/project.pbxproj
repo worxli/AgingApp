@@ -57,8 +57,9 @@
 		8019172F199BE9240063D0F9 /* avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8019172E199BE9240063D0F9 /* avatar.jpg */; };
 		80191731199D4E070063D0F9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80191730199D4E070063D0F9 /* CoreData.framework */; };
 		80191734199D4E490063D0F9 /* AgingModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80191732199D4E490063D0F9 /* AgingModel.xcdatamodeld */; };
-		80191737199D51580063D0F9 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 80191736199D51580063D0F9 /* User.m */; };
-		8019173A199D51590063D0F9 /* PictureSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 80191739199D51590063D0F9 /* PictureSet.m */; };
+		8019173D199D54310063D0F9 /* AGEGalleryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8019173C199D54310063D0F9 /* AGEGalleryController.m */; };
+		80EA77E6199D65EA000ED431 /* AGECellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EA77E5199D65EA000ED431 /* AGECellView.m */; };
+		80EA77F819A27D3D000ED431 /* PictureSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 80EA77F719A27D3D000ED431 /* PictureSet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,10 +161,12 @@
 		8019172E199BE9240063D0F9 /* avatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar.jpg; sourceTree = "<group>"; };
 		80191730199D4E070063D0F9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		80191733199D4E490063D0F9 /* AgingModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AgingModel.xcdatamodel; sourceTree = "<group>"; };
-		80191735199D51580063D0F9 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = ActingQuiz/User.h; sourceTree = "<group>"; };
-		80191736199D51580063D0F9 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = ActingQuiz/User.m; sourceTree = "<group>"; };
-		80191738199D51590063D0F9 /* PictureSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PictureSet.h; path = ActingQuiz/PictureSet.h; sourceTree = "<group>"; };
-		80191739199D51590063D0F9 /* PictureSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PictureSet.m; path = ActingQuiz/PictureSet.m; sourceTree = "<group>"; };
+		8019173B199D54310063D0F9 /* AGEGalleryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGEGalleryController.h; sourceTree = "<group>"; };
+		8019173C199D54310063D0F9 /* AGEGalleryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGEGalleryController.m; sourceTree = "<group>"; };
+		80EA77E4199D65EA000ED431 /* AGECellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGECellView.h; sourceTree = "<group>"; };
+		80EA77E5199D65EA000ED431 /* AGECellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGECellView.m; sourceTree = "<group>"; };
+		80EA77F619A27D3D000ED431 /* PictureSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PictureSet.h; path = ActingQuiz/PictureSet.h; sourceTree = "<group>"; };
+		80EA77F719A27D3D000ED431 /* PictureSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PictureSet.m; path = ActingQuiz/PictureSet.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,10 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				80191732199D4E490063D0F9 /* AgingModel.xcdatamodeld */,
-				80191738199D51590063D0F9 /* PictureSet.h */,
-				80191739199D51590063D0F9 /* PictureSet.m */,
-				80191735199D51580063D0F9 /* User.h */,
-				80191736199D51580063D0F9 /* User.m */,
+				80EA77F619A27D3D000ED431 /* PictureSet.h */,
+				80EA77F719A27D3D000ED431 /* PictureSet.m */,
 				05542288193F07B200F20BC3 /* ActingQuiz */,
 				055422A1193F07B200F20BC3 /* ActingQuizTests */,
 				05542281193F07B200F20BC3 /* Frameworks */,
@@ -230,18 +231,19 @@
 		05542288193F07B200F20BC3 /* ActingQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				80EA77E4199D65EA000ED431 /* AGECellView.h */,
+				80EA77E5199D65EA000ED431 /* AGECellView.m */,
 				8019172E199BE9240063D0F9 /* avatar.jpg */,
 				05542300193F094900F20BC3 /* FaceFrontierCamViewController.h */,
-				05542301193F094900F20BC3 /* FaceFrontierCamViewController.m */,
 				05542302193F094900F20BC3 /* FaceFrontierPreviewView.h */,
 				05542303193F094900F20BC3 /* FaceFrontierPreviewView.m */,
-				80191721198FF39B0063D0F9 /* AGEDetailImageViewController.h */,
 				8019172B198FF3F40063D0F9 /* AGEAgedViewController.h */,
 				8019172C198FF3F40063D0F9 /* AGEAgedViewController.m */,
 				80191723198FF39B0063D0F9 /* AGECameraController.h */,
 				80191724198FF39B0063D0F9 /* AGECameraController.m */,
 				80191725198FF39B0063D0F9 /* AGEMainController.h */,
 				80191726198FF39B0063D0F9 /* AGEMainController.m */,
+				80191721198FF39B0063D0F9 /* AGEDetailImageViewController.h */,
 				80191722198FF39B0063D0F9 /* AGEDetailImageViewController.m */,
 				80191727198FF39B0063D0F9 /* AGESettings.h */,
 				05542304193F094900F20BC3 /* FaceFrontierHomeViewController.h */,
@@ -258,6 +260,9 @@
 				05542292193F07B200F20BC3 /* FFActQuizAppDelegate.m */,
 				055422FA193F087A00F20BC3 /* Main_iPhone.storyboard */,
 				055422FB193F087A00F20BC3 /* Main_iPad.storyboard */,
+				05542301193F094900F20BC3 /* FaceFrontierCamViewController.m */,
+				8019173B199D54310063D0F9 /* AGEGalleryController.h */,
+				8019173C199D54310063D0F9 /* AGEGalleryController.m */,
 				05542294193F07B200F20BC3 /* Images.xcassets */,
 				05542289193F07B200F20BC3 /* Supporting Files */,
 			);
@@ -467,24 +472,25 @@
 				055422DC193F07DD00F20BC3 /* AFURLConnectionOperation.m in Sources */,
 				055422E2193F07DD00F20BC3 /* UIAlertView+AFNetworking.m in Sources */,
 				055422DB193F07DD00F20BC3 /* AFSecurityPolicy.m in Sources */,
-				80191737199D51580063D0F9 /* User.m in Sources */,
 				055422F5193F083300F20BC3 /* FaceFrontierCreateAccountViewController.m in Sources */,
 				055422D7193F07DD00F20BC3 /* AFHTTPRequestOperation.m in Sources */,
 				055422DF193F07DD00F20BC3 /* AFURLSessionManager.m in Sources */,
 				055422F6193F083300F20BC3 /* FaceFrontierDemographicViewController.m in Sources */,
 				8019172A198FF39B0063D0F9 /* AGEMainController.m in Sources */,
 				055422DE193F07DD00F20BC3 /* AFURLResponseSerialization.m in Sources */,
-				8019173A199D51590063D0F9 /* PictureSet.m in Sources */,
 				05542293193F07B200F20BC3 /* FFActQuizAppDelegate.m in Sources */,
+				80EA77F819A27D3D000ED431 /* PictureSet.m in Sources */,
 				0554230A193F094900F20BC3 /* FaceFrontierHomeViewController.m in Sources */,
 				80191734199D4E490063D0F9 /* AgingModel.xcdatamodeld in Sources */,
 				055422F7193F083300F20BC3 /* FaceFrontierGuestModeViewController.m in Sources */,
 				055422E5193F07DD00F20BC3 /* UIProgressView+AFNetworking.m in Sources */,
+				80EA77E6199D65EA000ED431 /* AGECellView.m in Sources */,
 				055422D9193F07DD00F20BC3 /* AFHTTPSessionManager.m in Sources */,
 				8019172D198FF3F40063D0F9 /* AGEAgedViewController.m in Sources */,
 				05542309193F094900F20BC3 /* FaceFrontierPreviewView.m in Sources */,
 				055422E0193F07DD00F20BC3 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				055422F9193F083300F20BC3 /* FaceFrontierToscViewController.m in Sources */,
+				8019173D199D54310063D0F9 /* AGEGalleryController.m in Sources */,
 				055422D8193F07DD00F20BC3 /* AFHTTPRequestOperationManager.m in Sources */,
 				055422E4193F07DD00F20BC3 /* UIImageView+AFNetworking.m in Sources */,
 				055422E3193F07DD00F20BC3 /* UIButton+AFNetworking.m in Sources */,
