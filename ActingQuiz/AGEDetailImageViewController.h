@@ -18,6 +18,8 @@
 @property (weak, nonatomic) UIImage *Aged;
 @property (weak, nonatomic) IBOutlet UITextView *AgeView;
 @property (weak, nonatomic) NSString *Age;
-@property (weak, nonatomic) NSString *imageId;
+@property (weak, nonatomic) NSNumber *imageId;
+- (IBAction)watch:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *watchButton;
 
 @end

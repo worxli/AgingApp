@@ -28,7 +28,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     self.userId = (int)[defaults integerForKey:@"user_id"];
-    
+    self.imageId = 0;
     
     FFActQuizAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
     self.fetchedPictureSetArray = [appDelegate getAllImageSets:[NSNumber numberWithInt: self.userId]];
@@ -108,11 +108,12 @@
         [self setAged: aged];
         [self setImage: img];
         [self setAge: [self clustertoage:[record.cluster intValue]]];
-        [self performSegueWithIdentifier:@"show_detail" sender:self];
         
         if ([@"15" isEqualToString:[NSString stringWithFormat: @"%@", record.cluster]]) {
-            [self setImageId: [NSString stringWithFormat: @"%@", record.imageid]];
+            [self setImageId: [NSNumber numberWithInt: [record.imageid intValue]]];
         }
+        
+        [self performSegueWithIdentifier:@"show_detail" sender:self];
     }
 }
 
@@ -183,9 +184,9 @@
         [vc setAged: self.Aged];
         [vc setImage: self.Image];
         [vc setAge: self.Age];
-        if (self.imageId) {
-            //self.imageId = @"22965";
+        if (self.imageId!=0) {
             [vc setImageId: self.imageId];
+            NSLog(@"aa%@",self.imageId);
         }
     }
 }

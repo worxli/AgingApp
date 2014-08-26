@@ -308,7 +308,7 @@
         [array addObject: [NSString stringWithFormat:@"%ld",(long)i]];
     }
     
-    self.ageArray  = [[NSArray alloc] initWithObjects: /*@"all",*/ @"1", @"2-3", @"4-5", @"6-8", @"9-11", @"12-14", @"15-23", @"24-33", @"34-43", @"44-55", @"56-66", @"67-78", @"79-101", nil];
+    self.ageArray  = [[NSArray alloc] initWithObjects: @"all", @"1", @"2-3", @"4-5", @"6-8", @"9-11", @"12-14", @"15-23", @"24-33", @"34-43", @"44-55", @"56-66", @"67-78", @"79-101", nil];
     
     //self.ageArray = [[NSArray alloc] initWithArray:array];
     
@@ -447,8 +447,8 @@
         self.ethnicity = @"white";
         self.expression = @"neutral";
         //self.targetAge = responseObject[@"age"];
-        //self.targetAge = @"all";
-        self.targetAge = @"1";
+        self.targetAge = @"all";
+        //self.targetAge = @"1";
 
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -460,8 +460,8 @@
         self.gender = @"f";
         self.ethnicity = @"white";
         self.expression = @"neutral";
-        //self.targetAge = @"all";
-        self.targetAge = @"1";
+        self.targetAge = @"all";
+        //self.targetAge = @"1";
     }];
     
     
