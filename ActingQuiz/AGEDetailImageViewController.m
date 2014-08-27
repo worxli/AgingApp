@@ -38,6 +38,8 @@
            
         self.videoUrl = [NSString stringWithFormat:@"%@getMorph?face_id=%@", serverUrl, self.imageId];
         self.watchButton.hidden = NO;
+    } else {
+        self.watchButton.hidden = YES;
     }
 
     self.AgedView.contentMode = UIViewContentModeScaleAspectFit;

@@ -444,11 +444,6 @@
         
         self.age = responseObject[@"age"];
         self.gender = responseObject[@"gender"];
-        self.ethnicity = @"white";
-        self.expression = @"neutral";
-        //self.targetAge = responseObject[@"age"];
-        self.targetAge = @"all";
-        //self.targetAge = @"1";
 
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -458,11 +453,19 @@
         //default values
         self.age = @"0";
         self.gender = @"f";
-        self.ethnicity = @"white";
-        self.expression = @"neutral";
-        self.targetAge = @"all";
-        //self.targetAge = @"1";
     }];
+    
+    if (!self.ethnicity) {
+        self.ethnicity = @"white";
+    }
+    
+    if (!self.targetAge) {
+        self.targetAge = @"all";
+    }
+    
+    if (!self.expression) {
+        self.expression = @"neutral";
+    }
     
     
     ///////////
