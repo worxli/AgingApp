@@ -111,6 +111,8 @@
         
         if ([@"15" isEqualToString:[NSString stringWithFormat: @"%@", record.cluster]]) {
             [self setImageId: [NSNumber numberWithInt: [record.imageid intValue]]];
+        } else {
+            [self setImageId: 0];
         }
         
         [self performSegueWithIdentifier:@"show_detail" sender:self];
@@ -187,6 +189,8 @@
         if (self.imageId!=0) {
             [vc setImageId: self.imageId];
             NSLog(@"aa%@",self.imageId);
+        } else {
+            [vc setImageId: 0];
         }
     }
 }
