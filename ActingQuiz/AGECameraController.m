@@ -321,7 +321,6 @@
     self.ethnicityArray = [[NSArray alloc] initWithObjects:
                            @"White",
                            @"Black",
-                           @"Arab",
                            @"Hispanic",
                            @"Native",
                            @"Asian", nil];
